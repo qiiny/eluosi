@@ -1,13 +1,15 @@
 package view;
 
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 /**
  * @author: Qin
  * @Date: 2020/11/25.
  * 设置按钮样式
  */
-public class ImgButton extends JButton{
+public abstract class ImgButton extends JButton{
     /**
      * 序列化
      */
@@ -23,5 +25,16 @@ public class ImgButton extends JButton{
         setIcon(imageIcon);
         //去除边框
         setBorder(null);
+        //添加按键检测
+        addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                onClick();
+            }
+        });
     }
+    /**
+     *  按钮点击时的抽象方法
+     */
+    public abstract void onClick();
 }

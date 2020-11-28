@@ -45,7 +45,7 @@ public class MainWin extends JFrame {
         //设置背景图片
         setBack();
         //实例化绘制容器类
-        MyPanel JPanel=new MyPanel();
+        MyPanel JPanel=new MyPanel(operation);
         //得到容器
         layeredPanel=getLayeredPane();
         //设置绘制区域
@@ -74,5 +74,13 @@ public class MainWin extends JFrame {
         jl.setBounds(0,0,360,600);
         //添加组件
         getContentPane().add(jl);
+    }
+
+    /**
+     * 获取游戏区
+     * @return 返回游戏区
+     */
+    public GamePanel getGamePanel(){
+        return gamePanel;
     }
 }

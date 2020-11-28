@@ -1,5 +1,7 @@
 package view;
 
+import controller.Operation;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -10,8 +12,18 @@ import java.awt.*;
  */
 public class MyPanel extends JPanel {
     private static final long serialVersionUID=2L;
+    /**
+     * 设按钮为属性，方便操作
+     */
+    JButton left;
+    JButton right;
+    JButton down;
+    JButton rota;
+    JButton start;
+    JButton setting;
+    JButton login;
 
-    public MyPanel() {
+    public MyPanel(Operation operation) {
         //设置大小，同窗体一样大
         setBounds(0,0,360,600);
         //设置画布为自由布局
@@ -20,19 +32,19 @@ public class MyPanel extends JPanel {
         setOpaque(false);
         //设置按钮并且添加图片
         //左移
-        JButton left=new ImgButton(new ImageIcon("img/left.png"));
+        left=operation.left;
         //右移
-        JButton right=new ImgButton(new ImageIcon("img/right.png"));
+        right= operation.right;
         //下滑
-        JButton down=new ImgButton(new ImageIcon("img/down.png"));
+        down=operation.down;
         //旋转
-        JButton rota=new ImgButton(new ImageIcon("img/rota.png"));
+        rota= operation.rota;
         //开始
-        JButton start=new ImgButton(new ImageIcon("img/start.png"));
+        start= operation.start;
         //设置
-        JButton setting=new ImgButton(new ImageIcon("img/setting.png"));
+        setting=operation.setting;
         //登录
-        JButton login=new ImgButton(new ImageIcon("img/login.png"));
+        login=operation.login;
         //按钮位置
         left.setBounds(240,255,45,45);
         right.setBounds(285,255,45,45);

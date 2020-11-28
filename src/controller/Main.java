@@ -10,10 +10,10 @@ import view.MainWin;
  */
 public class Main {
     public static void main(String[] args) {
-        //实例化操作
-        Operation op = new Operation();
         //实例化数据
         GameData gameData = new GameData();
+        //实例化操作
+        Operation op = new Operation();
         //实例化窗体对象,将数据和操作传递到窗体类
         MainWin mainWin = new MainWin(op,gameData);
         //将窗口与操作类关联
