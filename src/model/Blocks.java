@@ -1,7 +1,6 @@
 package model;
 
 import java.awt.*;
-import java.util.Arrays;
 
 /**
  * 方块类

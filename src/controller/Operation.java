@@ -62,7 +62,9 @@ public class Operation {
         rota= new ImgButton(new ImageIcon("img/rota.png")) {
             @Override
             public void onClick() {
-
+                //旋转
+                gameData.rote();
+                mainWin.getGamePanel().repaint();
             }
         };
         start= new ImgButton(new ImageIcon("img/start.png")) {

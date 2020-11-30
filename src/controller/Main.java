@@ -20,6 +20,9 @@ public class Main {
         op.setMainWin(mainWin);
         //将数据与操作区关联
         op.setGameData(gameData);
+        AutoDown autoDown = new AutoDown(gameData,mainWin);
+        //启动
+        autoDown.start();
         //使窗体一直显示
         mainWin.setVisible(true);
     }

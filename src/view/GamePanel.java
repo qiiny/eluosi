@@ -28,7 +28,19 @@ public class GamePanel extends JPanel {
         //遍历方块位置
         for (Point point : gameData.blocks.points) {
             //绘制实心方块
+            //出现位置*单个像素大小
             g.fillRect((point.x + gameData.x) * 20, (point.y + gameData.y) * 20, 20, 20);
+        }
+        //绘制存在的方块
+        int heightMax=19;
+        int heightMin=2;
+        int widthMax=10;
+        for (int i = heightMax; i >=heightMin ; i--) {
+            for (int j = 0; j < widthMax;j++){
+                if (gameData.exist[j][i]!=0){
+                    g.fillRect(j*20,i * 20,20,20);
+                }
+            }
         }
     }
 }
