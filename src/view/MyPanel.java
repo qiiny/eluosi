@@ -20,7 +20,6 @@ public class MyPanel extends JPanel {
     JButton down;
     JButton rota;
     JButton start;
-    JButton setting;
     JButton login;
 
     public MyPanel(Operation operation) {
@@ -41,17 +40,16 @@ public class MyPanel extends JPanel {
         rota= operation.rota;
         //开始
         start= operation.start;
-        //设置
-        setting=operation.setting;
         //登录
         login=operation.login;
+        //设置按钮透明
+        setTransparent();
         //按钮位置
         left.setBounds(240,255,45,45);
         right.setBounds(285,255,45,45);
         down.setBounds(240,300,45,45);
         rota.setBounds(285,300,45,45);
         start.setBounds(240,360,90,50);
-        setting.setBounds(240,510,48,48);
         login.setBounds(290,510,48,48);
         //添加到布局中
         add(left);
@@ -59,15 +57,24 @@ public class MyPanel extends JPanel {
         add(down);
         add(rota);
         add(start);
-        add(setting);
         add(login);
+        setFocusable(false);
+    }
+
+    /**
+     * 按钮透明
+     */
+    private void setTransparent() {
+        start.setContentAreaFilled(false);
+        //去掉选择框
+        start.setFocusPainted(false);
     }
 
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
         //设置颜色和透明度
-        g.setColor(new Color(0,0,0,50));
+        g.setColor(new Color(150,150,150,50));
         //游戏区设置位置和大小
         g.fillRect(15,30,200,360);
         //排名区
@@ -101,4 +108,5 @@ public class MyPanel extends JPanel {
         g.drawString("荣誉榜",25,435);
 
     }
+
 }

@@ -25,6 +25,8 @@ public abstract class ImgButton extends JButton{
         setIcon(imageIcon);
         //去除边框
         setBorder(null);
+        //取消截获按键
+        setFocusable(false);
         //添加按键检测
         addActionListener(new ActionListener() {
             @Override

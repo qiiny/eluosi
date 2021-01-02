@@ -1,7 +1,11 @@
 package controller;
 
 import model.GameData;
+import model.User;
 import view.MainWin;
+
+import java.sql.SQLException;
+import java.util.List;
 
 /**
  * @author: Qin
@@ -20,10 +24,17 @@ public class Main {
         op.setMainWin(mainWin);
         //将数据与操作区关联
         op.setGameData(gameData);
+        //实现方块自动下落功能
         AutoDown autoDown = new AutoDown(gameData,mainWin);
-        //启动
+        //启动下落
         autoDown.start();
         //使窗体一直显示
         mainWin.setVisible(true);
+        DataDao dao=new DataDao();
+        try {
+            List<User> all = dao.findAll();
+        } catch (ClassNotFoundException | SQLException e) {
+            e.printStackTrace();
+        }
     }
 }
